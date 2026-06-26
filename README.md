@@ -2,6 +2,12 @@
 
 A simple Express + MongoDB API for managing mess menus for Hostel 3 and Hostel 8.
 
+Api link
+
+```bash
+https://hostelmenuapi.onrender.com
+```
+
 ## Features
 
 - Add a daily meal plan for hostel mess menus
