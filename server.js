@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import hostel3Router from './Routes/hostel3.js'
 import hostel8Router from './Routes/hostel8.js'
 import hostelLoginRouter from './Routes/LoginRoute.js'
+import cors from 'cors';
 import {config} from 'dotenv'
 
 
@@ -12,6 +13,7 @@ config({path:'./.env'});
 const app = express();
 const port = process.env.PORT;
 
+app.use(cors())
 app.use(express.json())
 
 
