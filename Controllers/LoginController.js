@@ -6,7 +6,7 @@ export const register = async (req,res) => {
         const {username,password} = req.body;
         const user = await Login.findOne({username});
         if(user) return res.json({
-            message:"User already exist"
+            message:"User already exists"
         })
         const newUser = new Login({username,password});
         await newUser.save();
@@ -24,9 +24,7 @@ export const register = async (req,res) => {
 export const login = async (req,res) => {
     try{
         const {username,password} = req.body;
-        console.log(username,password)
-        const user = await Login.findOne({username});
-        console.log(user)
+        const user = await Login.findOne({username,password});
         if(!user) return res.json({
             message:"Invalid username or password"
         })
