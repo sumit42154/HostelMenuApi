@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import hostel3Router from './Routes/hostel3.js'
 import hostel8Router from './Routes/hostel8.js'
 import hostelLoginRouter from './Routes/LoginRoute.js'
+import userVoteRouter from './Routes/userVote.js'
 import cors from 'cors';
 import {config} from 'dotenv'
 
@@ -37,6 +38,7 @@ app.get('/', (req, res) => {
 app.use('/api/hostel3',hostel3Router)
 app.use('/api/hostel8',hostel8Router)
 app.use('/api/hostel', hostelLoginRouter);
+app.use('/api/vote', userVoteRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
