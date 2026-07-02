@@ -5,7 +5,7 @@ export const addVote = async (req, res) => {
   try {
     const { deviceId, hostel, meal, vote } = req.body;
 
-    const today = new Date().toISOString().split("T")[0];
+    const today = new Intl.DateTimeFormat("en-CA", { timeZone:'Asia/Kolkata' }).format(new Date());
 
     const user = await UserVote.findOne({ deviceId, hostel, date: today });
     if (user) {
