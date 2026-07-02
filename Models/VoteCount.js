@@ -22,7 +22,8 @@ const VoteCountSchema = new mongoose.Schema({
         "good": { type: Number, default: 0 },
         "bad": { type: Number, default: 0 },
         "skipped": { type: Number, default: 0 },
-    }
+    },
+    createdAt: { type: Date, default: Date.now , expires: '30d' }
 });
 
 export const VoteCount = mongoose.model('VoteCount', VoteCountSchema);
